@@ -8,11 +8,11 @@ $aj-purple-light: lighten($aj-purple,40%);
 $aj-gradient: linear-gradient($aj-purple-dark, $aj-purple);
 
 $pad-big: 3rem;
-$pad-mid: 3rem;
+$pad-menu: 3.5rem;
 
 body {
 	font-family: 'Sarabun', "Roboto", Arial, sans-serif;
-	font-display: auto
+	font-display: auto;
 	font-size: 16px;
 	line-height: 1;
 	background: $aj-purple;
@@ -117,8 +117,8 @@ nav ul li {
 }
 
 nav ul li a {
-	margin: 0 0.5rem;
-	height: $pad-big;
+	padding: 0 0.5rem;
+	height: $pad-menu;
 	@include flexrow;
 	@include flexcenter;
 	color: #fff;
@@ -133,7 +133,10 @@ nav ul li a:after {
 	position: absolute;
 	background: transparent;
 	left: 0;
-	bottom: 0.5rem;
+	bottom: 0.6rem;
+	@include breakpoint(tablet) {
+		opacity: 0;
+	}
 }
 
 nav ul li a:hover:after {
@@ -144,11 +147,8 @@ nav ul li a:hover:after {
 	background: $aj-purple-light;
 	left: 0;
 	bottom: 0.5rem;
-}
-
-@media (hover:none), (hover:on-demand) {
-	nav ul li a:hover:after {
-		display: none;
+	@include breakpoint(tablet) {
+		opacity: 0;
 	}
 }
 
@@ -348,7 +348,8 @@ section h3 {
 	@include zero;
 	font-size: 3rem;
 	font-weight: 300;
-	margin: 2rem 0 2rem 0;
+	margin: 0rem 0 2rem 0;
+	padding: 2.75rem 0 0 0;
 }
 
 section a {
