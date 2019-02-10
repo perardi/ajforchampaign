@@ -523,3 +523,15 @@ label {
 .button:hover {
 	opacity: 0.7;
 }
+
+.no_show {
+	color: $aj-light;
+	text-decoration: none;
+	border: none;
+}
+
+.no_show:hover {
+	color: $aj-light;
+	text-decoration: none;
+	border: none;
+}
