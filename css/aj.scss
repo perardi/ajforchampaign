@@ -166,6 +166,7 @@ nav ul li a.active:after {
 /************* Hero blocks *************/
 header {
 	height: 50vh;
+	
 	width: 100vw;
 	background: $aj-purple-light;
 	top: 0;
@@ -196,6 +197,12 @@ header {
   	  left: 0;
   	  background-image: $aj-gradient;
   	  opacity: .6; 
+    }
+}
+
+@media screen and (orientation: landscape) and (max-width: 750px) {
+    header {
+    	height: 100vh;
     }
 }
 
@@ -251,6 +258,12 @@ header {
   	  left: 0;
   	  background-image: $aj-gradient;
   	  opacity: .6; 
+    }
+}
+
+@media screen and (orientation: landscape) and (max-width: 750px) {
+    #aj_vote {
+    	height: 75vh;
     }
 }
 
