@@ -31,7 +31,7 @@ p {
     @media (max-width: 768px) { @content; }
   }
   @else if $point == phone {
-    @media (max-width: 414px)  { @content; }
+    @media (max-width: 640px)  { @content; }
   }
   @else if $point == smallphone {
     @media (max-width: 360px)  { @content; }
@@ -190,6 +190,7 @@ header {
 
 .aj_logo img {
 	width: 100%;
+	filter: invert(1);
 }
 
 #aj_vote {
@@ -318,10 +319,21 @@ section h3 {
 	@include flexcenter;
 	background: $aj-purple-dark;
 	margin-top: 1rem;
+	text-transform: uppercase;
+	font-size: 0.9rem;
+	letter-spacing: 1pt;
+	will-change: auto;
+	transition: opacity 0.2s ease;
+	cursor: pointer;
+}
+
+.link_button:hover {
+	opacity: 0.7;
 }
 
 .link_button_light {
-	background: $aj-purple
+	background: $aj-purple;
+	margin-bottom: 1rem;
 }
 
 /************* Donate *************/
@@ -361,4 +373,14 @@ footer p {
 	line-height:1.2 !important;
 	@include zero;
 	margin-bottom: 1rem;
+}
+
+footer a {
+	text-decoration: none;
+	color: $aj-purple-light;
+}
+
+footer a:hover {
+	text-decoration: underline;
+	color: $aj-light;
 }
