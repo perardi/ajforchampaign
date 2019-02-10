@@ -5,7 +5,7 @@ $aj-purple: #522e90;
 $aj-purple-dark: saturate(darken($aj-purple,20%),40%);
 $aj-light: #fff;
 $aj-purple-light: lighten($aj-purple,40%);
-$aj-gradient: linear-gradient($aj-purple-dark, $aj-purple);
+$aj-gradient: linear-gradient(saturate(darken($aj-purple,10%),70%), saturate($aj-purple,10%));
 
 $pad-big: 3rem;
 $pad-menu: 3.5rem;
