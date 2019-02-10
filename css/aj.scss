@@ -81,7 +81,8 @@ nav {
 	width: 100vw;
 	top: 0;
 	will-change: auto;
-	transition: background 0.2s ease;
+	transition: background 0.3s ease;
+	transition-delay: 0.2s;
 }
 
 .dark {
@@ -212,7 +213,6 @@ header {
 
 .aj_logo img {
 	width: 100%;
-	filter: invert(1);
 }
 
 #aj_vote {
