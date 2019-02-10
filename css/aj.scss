@@ -7,6 +7,9 @@ $aj-light: #fff;
 $aj-purple-light: lighten($aj-purple,40%);
 $aj-gradient: linear-gradient($aj-purple-dark, $aj-purple);
 
+$pad-big: 3rem;
+$pad-mid: 3rem;
+
 body {
 	font-family: 'Sarabun', sans-serif;
 	font-size: 16px;
@@ -95,19 +98,25 @@ nav ul {
 nav ul li {
 	@include zero;
 	text-transform: uppercase;
-	font-size: 0.9rem;
-	letter-spacing: 1pt;
+	font-size: 0.925rem;
+	letter-spacing: 2pt;
+	@include breakpoint(tablet) {
+		font-size: 0.9rem;
+		letter-spacing: 1pt;
+	}
 	@include breakpoint(phone) {
 		font-size: 0.8rem;
+		letter-spacing: 1pt;
 	}
 	@include breakpoint(smallphone) {
 		font-size: 0.7rem;
+		letter-spacing: 1pt;
 	}
 }
 
 nav ul li a {
 	margin: 0 0.5rem;
-	height: 3rem;
+	height: $pad-big;
 	@include flexrow;
 	@include flexcenter;
 	color: #fff;
@@ -135,6 +144,12 @@ nav ul li a:hover:after {
 	bottom: 0.5rem;
 }
 
+@media (hover:none), (hover:on-demand) {
+	nav ul li a:hover:after {
+		display: none;
+	}
+}
+
 nav ul li a.active:after {
 	content: " ";
 	height: 0.2rem;
@@ -146,7 +161,7 @@ nav ul li a.active:after {
 }
 
 
-/************* Header *************/
+/************* Hero blocks *************/
 header {
 	height: 50vh;
 	width: 100vw;
@@ -155,16 +170,19 @@ header {
 	z-index:1;
 	
     background-image: url("../img/aj_hero.jpg");
+	@include breakpoint(phone) {
+		 background-image: url("../img/aj_hero_phone.jpg");
+	}
 	background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-	
+
 	position: relative;
 	@include flexrow;
 	@include flexcenter;
 	
 	@include breakpoint(phone) {
-		background-position: 35% 0%;
+		background-position: 100% 0%;
 	}
 	
     &:before {
@@ -180,9 +198,13 @@ header {
 }
 
 .aj_logo {
-	width: 	15vw;
+	width: 	16vw;
+	max-width: 18rem;
 	position: relative;
 	z-index: 10;
+	@include breakpoint(tablet) {
+		width: 	28vw;
+	}
 	@include breakpoint(phone) {
 		width: 	36vw;
 	}
@@ -194,14 +216,23 @@ header {
 }
 
 #aj_vote {
-	height: 50vh;
+	height: 40vh;
+	@include breakpoint(tablet) {
+		height: 	30vh;
+	}
+	@include breakpoint(phone) {
+		height: 	50vh;
+	}
 	width: 100vw;
 	background: $aj-purple-light;
 	top: 0;
 	z-index:1;
-	margin-top: 3rem;
+	margin-top: $pad-big;
 	
     background-image: url("../img/aj_champaign.jpg");
+	@include breakpoint(phone) {
+		 background-image: url("../img/aj_champaign_phone.jpg");
+	}
 	background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -225,11 +256,11 @@ header {
 #aj_vote p {
 	position: relative;
 	z-index: 20;
-	width: 70vw;
+	width: 60vw;
 	font-size: 2rem;
 	text-align: center;
 	text-shadow: 0 0 1.5rem rgba(0,0,0,0.5);
-	line-height: 1.2;
+	line-height: 1.3;
 	@include breakpoint(phone) {
 		font-size: 1.5rem;
 	}
@@ -247,9 +278,30 @@ section {
 	width: 70vw;
 	margin: 0 auto;
 	height: auto;
+	@include breakpoint(tablet) {
+		width: 80vw;
+	}
 	@include breakpoint(phone) {
 		width: 85vw;
 	}
+}
+
+.donate_bump {
+	width: 70vw;
+	margin: 0 auto;
+	height: auto;
+	padding: 0.05rem 0 3rem 0;
+	@include breakpoint(tablet) {
+		width: 80vw;
+	}
+	@include breakpoint(phone) {
+		width: 85vw;
+	}
+}
+
+article {
+	max-width: 60rem;
+	margin: 0 auto;
 }
 
 section p {
@@ -260,15 +312,15 @@ section p {
 section ul {
 	list-style-type: none;
 	@include zero
-	display: grid;
-	grid-template-columns: 1fr;
+	@include flexcolumn;
 }
 
 section ul li {
 	@include zero
 	font-size: 1rem;
 	line-height: 1.4;
-	margin-top: 0.5rem;
+	margin-top: 0rem;
+	margin-bottom: 0.5rem;
 }
 
 section ul li:before {
@@ -298,18 +350,42 @@ section h3 {
 	margin: 2rem 0 2rem 0;
 }
 
+section a {
+	color: $aj-light;
+	text-decoration: none;
+	border-bottom: 1pt solid $aj-purple-light;
+	padding-bottom: 0.2rem;
+}
+
+section a:hover {
+	color: $aj-light;
+	text-decoration: none;
+	border-bottom: 2pt solid $aj-light;
+	padding-bottom: 0.2rem;
+}
+
 .grid_two {
 	display: grid;
 	grid-template-columns: 2fr 1fr;
-	grid-gap: 2rem;
 	@include breakpoint(phone) {
 		grid-template-columns: 1fr;
 	}
 }
 
+.grid_two h3 {
+	grid-column: 1/-1;
+}
+
+.copy_left {
+	padding-right: $pad-big;
+	@include breakpoint(phone) {
+		padding-right: 0;
+	}
+}
+
 /************* Volunteer *************/
 #aj_volunteer {
-	padding-bottom: 3rem;
+	padding-bottom: $pad-big;
 }
 
 .link_button {
@@ -325,6 +401,11 @@ section h3 {
 	will-change: auto;
 	transition: opacity 0.2s ease;
 	cursor: pointer;
+	border: none;
+}
+
+.link_button:hover {
+	border: none;
 }
 
 .link_button:hover {
@@ -342,35 +423,29 @@ section h3 {
 	width: 100vw;
 }
 
-.donate_copy {
-	width: 70vw;
-	margin: 0 auto;
-	height: auto;
-	padding: 1rem 0 3rem 0;
-	@include breakpoint(phone) {
-		width: 85vw;
-	}
-}
-
-/************* Contact *************/
-#aj_contact p {
-	@include breakpoint(phone) {
-		font-size: 1rem;
-	}
+.small_text_right {
+	font-size: 0.9rem !important;
+	color: $aj-purple-light;
+	margin-top: 2rem;
 }
 
 /************* Footer *************/
 footer {
 	text-align: center;
 	color: $aj-purple-light;
-	max-width: 85vw;
+	width: 70vw;
 	margin: 0 auto;
-	margin-top: 3rem;	
+	margin-top: 5rem;
+	margin-bottom: 4rem;
+	@include breakpoint(phone) {
+		text-align: left;
+		width: 85vw;
+	}
 }
 
 footer p {
 	font-size: 0.7rem;
-	line-height:1.2 !important;
+	line-height: 1.2 !important;
 	@include zero;
 	margin-bottom: 1rem;
 }
@@ -383,4 +458,68 @@ footer a {
 footer a:hover {
 	text-decoration: underline;
 	color: $aj-light;
+}
+
+/************* Mailing list *************/
+h2 {
+	font-weight: 400;
+	font-size: 1.5rem;
+}
+
+label {
+	font-size: 1rem;
+	margin-bottom: 0.5rem;
+}
+
+.asterisk {
+	color: $aj-purple-light;
+}
+
+.indicates-required {
+	text-align: right;
+	margin-bottom: 0.5rem;
+	font-size: 0.8rem;
+	margin-top: 1rem;
+}
+
+.mc-field-group {
+	@include flexcolumn;
+}
+
+.required {
+	margin-bottom: 1rem;
+	border: 1pt solid $aj-purple-light;
+	height: 2rem;
+	border-radius: 0 !important;
+}
+
+#mc_embed_signup div.mce_inline_error {
+	border: 1pt solid #dd1100;
+	background: #dd1100 !important;
+}
+
+#mc_embed_signup input.mce_inline_error {
+	border: 1pt solid #dd1100 !important; 
+}
+
+.button {
+	width: 10rem;
+	height: 3rem;
+	@include flexrow;
+	@include flexcenter;
+	background: $aj-purple-dark;
+	margin-top: 1rem;
+	text-transform: uppercase;
+	font-size: 0.9rem !important;
+	letter-spacing: 1pt;
+	will-change: auto;
+	transition: opacity 0.2s ease;
+	cursor: pointer;
+	color: #fff;
+	border: none;
+	border-radius: 0 !important;
+}
+
+.button:hover {
+	opacity: 0.7;
 }
