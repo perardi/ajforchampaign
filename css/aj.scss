@@ -1,5 +1,21 @@
 /********************* Globals *********************/
-@import url('https://fonts.googleapis.com/css?family=Sarabun:200,400');
+@font-face {
+    font-family: 'sarabun_extralightregular';
+    src: url('css/fonts/sarabun-extralight-webfont.woff2') format('woff2'),
+         url('css/fonts/sarabun-extralight-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'sarabunregular';
+    src: url('css/fonts/sarabun-regular-webfont.woff2') format('woff2'),
+         url('css/fonts/sarabun-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 
 $aj-purple: #522e90;
@@ -11,14 +27,10 @@ $aj-gradient: linear-gradient(saturate(darken($aj-purple,10%),70%), saturate($aj
 $pad-big: 3rem;
 $pad-menu: 3.5rem;
 
-@font-face {
-  	font-family: 'Sarabun';
-  	font-display: auto;
-}
 
 body {
 	font-display: auto;
-	font-family: 'Sarabun', 'Roboto', Arial, sans-serif;
+	font-family: 'sarabunregular', 'Roboto', Arial, sans-serif;
 	font-size: 16px;
 	line-height: 1;
 	background: $aj-purple;
@@ -396,7 +408,7 @@ section.hero {
 section h3 {
 	@include zero;
 	font-size: 3rem;
-	font-weight: 200;
+	font-family: 'sarabun_extralightregular', 'Roboto', Arial, sans-serif;
 	margin: 0rem 0 2rem 0;
 	padding: 2.75rem 0 0 0;
 }
