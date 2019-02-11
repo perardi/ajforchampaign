@@ -172,9 +172,9 @@ header {
 	top: 0;
 	z-index:1;
 	
-    background-image: url("../img/aj_hero.jpg");
+    background-image: url("img/aj_hero.jpg");
 	@include breakpoint(phone) {
-		 background-image: url("../img/aj_hero_phone.jpg");
+		 background-image: url("img/aj_hero_phone.jpg");
 	}
 	background-position: center;
     background-repeat: no-repeat;
@@ -238,9 +238,9 @@ header {
 	z-index:1;
 	margin-top: $pad-big;
 	
-    background-image: url("../img/aj_champaign.jpg");
+    background-image: url("img/aj_champaign.jpg");
 	@include breakpoint(phone) {
-		 background-image: url("../img/aj_champaign_phone.jpg");
+		 background-image: url("img/aj_champaign_phone.jpg");
 	}
 	background-position: center;
     background-repeat: no-repeat;
