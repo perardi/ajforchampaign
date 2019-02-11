@@ -1,6 +1,4 @@
 /********************* Globals *********************/
-@import url('https://fonts.googleapis.com/css?family=Sarabun:300,400');
-
 $aj-purple: #522e90;
 $aj-purple-dark: saturate(darken($aj-purple,20%),40%);
 $aj-light: #fff;
@@ -10,14 +8,20 @@ $aj-gradient: linear-gradient(saturate(darken($aj-purple,10%),70%), saturate($aj
 $pad-big: 3rem;
 $pad-menu: 3.5rem;
 
+@font-face {
+  	font-family: 'Sarabun';
+  	font-display: auto;
+}
+
 body {
-	font-family: 'Sarabun', "Roboto", Arial, sans-serif;
 	font-display: auto;
+	font-family: 'Sarabun', 'Roboto', Arial, sans-serif;
 	font-size: 16px;
 	line-height: 1;
 	background: $aj-purple;
 	color: $aj-light;
 	overflow-x: hidden;	
+	margin: 0;
 }
 
 p {
@@ -36,6 +40,9 @@ p {
   }
   @else if $point == phone {
     @media (max-width: 640px)  { @content; }
+  }
+  @else if $point == midphone {
+    @media (max-width: 400px)  { @content; }
   }
   @else if $point == smallphone {
     @media (max-width: 360px)  { @content; }
@@ -174,7 +181,13 @@ header {
 	
     background-image: url("img/aj_hero.jpg");
 	@include breakpoint(phone) {
-		 background-image: url("img/aj_hero_phone.jpg");
+		 background-image: url("img/aj_phone3.jpg");
+	}
+	@include breakpoint(midphone) {
+		 background-image: url("img/aj_phone2.jpg");
+	}
+	@include breakpoint(smallphone) {
+		 background-image: url("img/aj_phone3.jpg");
 	}
 	background-position: center;
     background-repeat: no-repeat;
@@ -240,7 +253,13 @@ header {
 	
     background-image: url("img/aj_champaign.jpg");
 	@include breakpoint(phone) {
-		 background-image: url("img/aj_champaign_phone.jpg");
+		 background-image: url("img/aj_champaign_phone3.jpg");
+	}
+	@include breakpoint(midphone) {
+		 background-image: url("img/aj_champaign_phone2.jpg");
+	}
+	@include breakpoint(smallphone) {
+		 background-image: url("img/aj_champaign_phone3.jpg");
 	}
 	background-position: center;
     background-repeat: no-repeat;
@@ -307,7 +326,7 @@ section {
 	width: 70vw;
 	margin: 0 auto;
 	height: auto;
-	padding: 0.05rem 0 3rem 0;
+	padding: 0.05rem 0 2rem 0;
 	@include breakpoint(tablet) {
 		width: 80vw;
 	}
@@ -317,7 +336,6 @@ section {
 }
 
 article {
-	max-width: 60rem;
 	margin: 0 auto;
 	padding-bottom: 1rem;
 	@include breakpoint(tablet) {
@@ -375,7 +393,7 @@ section.hero {
 section h3 {
 	@include zero;
 	font-size: 3rem;
-	font-weight: 300;
+	font-weight: 200;
 	margin: 0rem 0 2rem 0;
 	padding: 2.75rem 0 0 0;
 }
@@ -427,7 +445,7 @@ section a:hover {
 	@include flexrow;
 	@include flexcenter;
 	background: $aj-purple-dark;
-	margin-top: 1rem;
+	margin-top: 1.5rem;
 	text-transform: uppercase;
 	font-size: 0.9rem;
 	letter-spacing: 1pt;
