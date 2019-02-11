@@ -211,6 +211,7 @@ header {
 	max-width: 18rem;
 	position: relative;
 	z-index: 10;
+	margin-top: 1rem;
 	@include breakpoint(tablet) {
 		width: 	28vw;
 	}
@@ -302,7 +303,7 @@ section {
 	}
 }
 
-.donate_bump {
+.volunteer_bump {
 	width: 70vw;
 	margin: 0 auto;
 	height: auto;
@@ -318,6 +319,13 @@ section {
 article {
 	max-width: 60rem;
 	margin: 0 auto;
+	padding-bottom: 1rem;
+	@include breakpoint(tablet) {
+		max-width: 80vw;
+	}
+	@include breakpoint(phone) {
+		max-width: 85vw;
+	}
 }
 
 section p {
@@ -402,12 +410,15 @@ section a:hover {
 	padding-right: $pad-big;
 	@include breakpoint(phone) {
 		padding-right: 0;
+		margin-top: -1.5rem;
 	}
 }
 
 /************* Volunteer *************/
 #aj_volunteer {
 	padding-bottom: $pad-big;
+	background: $aj-purple-dark;
+	width: 100vw;
 }
 
 .link_button {
@@ -441,8 +452,9 @@ section a:hover {
 
 /************* Donate *************/
 #aj_donate {
-	background: $aj-purple-dark;
+	background: $aj-purple;
 	width: 100vw;
+	padding-bottom: $pad-big;
 }
 
 .small_text_right {
@@ -529,7 +541,7 @@ label {
 	height: 3rem;
 	@include flexrow;
 	@include flexcenter;
-	background: $aj-purple-dark;
+	background: $aj-purple;
 	margin-top: 1rem;
 	text-transform: uppercase;
 	font-size: 0.9rem !important;
