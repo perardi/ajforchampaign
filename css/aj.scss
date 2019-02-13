@@ -234,16 +234,16 @@ header {
 }
 
 .aj_logo {
-	width: 	16vw;
-	max-width: 18rem;
+	width: 	45vw;
+	max-width: 38rem;
 	position: relative;
 	z-index: 10;
 	margin-top: 1rem;
 	@include breakpoint(tablet) {
-		width: 	28vw;
+		width: 	50vw;
 	}
 	@include breakpoint(phone) {
-		width: 	36vw;
+		width: 	70vw;
 	}
 }
 
@@ -585,6 +585,10 @@ label {
 	color: #fff;
 	border: none;
 	border-radius: 0 !important;
+}
+
+#mc-embedded-subscribe {
+	-webkit-appearance: none;
 }
 
 .button:hover {
