@@ -451,6 +451,24 @@ section a:hover {
 	}
 }
 
+/************* Positions *************/
+.positions {
+	padding-top: 0.5rem;
+	margin-top: 2rem;	
+	border-top: 1pt solid $aj-purple-light;
+}
+
+.positions h4 {
+	font-weight: 400;
+	font-size: 1.5rem;
+	margin-bottom: 1rem !important;
+	@include zero;
+}
+
+.positions p {
+	margin-bottom: 1.5rem;
+}
+
 /************* Volunteer *************/
 #aj_volunteer {
 	padding-bottom: $pad-big;
